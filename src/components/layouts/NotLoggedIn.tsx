@@ -1,8 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import { useTitle } from "../lib/hooks";
+import { useTitle } from "../../lib/hooks";
 import { useSelector } from "react-redux";
-import { selectLoading } from "../features/auth.slice";
+import { selectLoading } from "../../features/auth.slice";
 
 const NotLoggedIn = () => {
   const loading = useSelector(selectLoading);

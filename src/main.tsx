@@ -6,13 +6,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import ErrorPage from "./pages/error";
 import Authentication from "./pages/auth";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import AuthPage from "./components/auth";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import Account from "./pages/account";
 import Loading from "./pages/loading";
-import Layout from "./components/Layout";
+import Layout from "./components/layouts";
+import Settings from "./pages/settings";
 
 const darkTheme = createTheme({
   palette: {
@@ -40,17 +40,21 @@ const router = createBrowserRouter([
         children: [
           {
             path: "login",
-            element: <Login />,
+            element: <AuthPage initType="login" />,
           },
           {
             path: "register",
-            element: <Register />,
+            element: <AuthPage initType="register" />,
           },
         ],
       },
       {
         path: "/account",
         element: <Account />,
+      },
+      {
+        path: "/settings",
+        element: <Settings />,
       },
       {
         path: "*",

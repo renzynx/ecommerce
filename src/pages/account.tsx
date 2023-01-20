@@ -1,8 +1,8 @@
 import { useTitle } from "../lib/hooks";
-import NotLoggedIn from "../components/NotLoggedIn";
-import AccountSettings from "../components/AccountSettings";
+import NotLoggedIn from "../components/layouts/NotLoggedIn";
 import { useSelector } from "react-redux";
 import { selectAuth } from "../features/auth.slice";
+import AccountPage from "../components/account";
 
 const Account = () => {
   const { user, loading } = useSelector(selectAuth);
@@ -14,7 +14,7 @@ const Account = () => {
 
   return (
     <>
-      <AccountSettings />
+      <AccountPage />
     </>
   );
 };

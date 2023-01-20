@@ -24,7 +24,15 @@ export const useIsAuth = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        dispatch(setUser(user));
+        dispatch(
+          setUser({
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+            emailVerified: user.emailVerified,
+          })
+        );
       } else {
         dispatch(setUser(null));
       }
